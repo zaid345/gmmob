@@ -1,0 +1,32 @@
+﻿
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title></title>
+        <style>
+            label {
+                margin: 0;
+                display: block;
+            }
+            input[type="text"], textarea {
+                padding:  2px;
+                width: 300px;
+                font-family: inherit;
+            }
+            textarea {
+                height: 100px;
+            }
+        </style>
+    </head>
+    <body>
+        <h4>Details</h4>
+        <p>Add details for you product then save it to the database.</p>
+        <form method="post" enctype="multipart/form-data">
+            <label id="name">catagoray Name</label><br />
+            <input type="text" name="name" id="name" /><br />
+            <input type="submit" value="Save" />
+        </form>
+    </body>
+</html>

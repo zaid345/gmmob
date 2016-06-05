@@ -1,0 +1,117 @@
+﻿
+@model shopping.Models.login
+
+	@if (TempData["Success2"] != null)
+{
+<script >
+    swal("INVALID", "Invalid username or password", "warning")
+</script>
+}
+
+             	
+@if (TempData["msg"] != null)
+{
+<script >
+    swal("incorrect username", "please try again", "warning")
+</script>
+}
+	
+@if (TempData["msg1"] != null)
+{
+<script >
+    swal("thankyou", "email has been sent to your email address", "success")
+</script>
+}
+    <link rel="stylesheet" href="~/css/bootstrap.min.css"  type="text/css">
+	
+	<link rel="stylesheet" href="~/css/style4.css">
+	
+<script src="~/Scripts/jquery-1.7.1.min.js" type="text/javascript"></script>
+<script src="~/Scripts/jquery.validate.min.js" type="text/javascript"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js" type="text/javascript"></script>
+	<div id="page-content" class="single-page">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-6">
+					<div class="heading"><h2>Login</h2></div>
+					
+@using (Html.BeginForm("login", "Home", FormMethod.Post,
+                               new { enctype = "multipart/form-data" }))
+ 
+                               {      @Html.ValidationSummary(true)
+
+                                   <div class="form-group">
+
+                        @Html.TextBoxFor(model => model.name, new { @placeholder = "name",@class = "form-control",@style="width :100%" })
+	                    	@Html.ValidationMessageFor(model=>model.name)
+    
+            </div>        
+						<div class="form-group">
+                        @Html.PasswordFor(model => model.password, new { @placeholder = "password",@class = "form-control",@style="width :100%" })
+	                    	@Html.ValidationMessageFor(model=>model.password)
+    
+                            					</div>
+		<div class="col-md-4">	
+    				<button type="submit" class="btn btn-1" name="login" id="login">Login</button> 
+    </div>
+    <br />
+    	<div class="col-md- 3">	
+            <a href="/Home/reset" class="btn btn-primary btn-md"> <b>forget password ?</b></a>
+    				  </div>
+}
+</div>				<div class="col-md-6">
+					
+                    <div class="heading"><h2>New User ? Create An Account.</h2></div>
+					
+                    
+@using (Html.BeginForm("Create", "Home", FormMethod.Post,
+                               new { enctype = "multipart/form-data" }))
+ {
+                    @Html.ValidationSummary(true)
+
+    
+    	<div class="form-group">
+                        @Html.TextBoxFor(m => m.username, new { @placeholder = "username",@class = "form-control",@style="width :100%" })
+	                    	@Html.ValidationMessageFor(m=>m.username)
+    
+    </div>                
+                        <div class="form-group">
+					  
+                            
+                             @Html.TextBoxFor(model => model.name, new { @placeholder = "name",@class = "form-control",@style="width :100%" })
+                    	  @Html.ValidationMessageFor(m => m.name)
+                                </div>
+			
+                        <div class="form-group">
+					   @Html.TextBoxFor(model => model.email, new { @placeholder = "email",@class = "form-control",@style="width :100%" })
+                    	  @Html.ValidationMessageFor(m => m.email)
+                                </div>
+			
+    
+                                <div class="form-group">
+					   @Html.TextBoxFor(model => model.phone, new { @placeholder = "phone",@class = "form-control",@style="width :100%" })
+                    	  @Html.ValidationMessageFor(m => m.phone)
+                                </div>
+	                    		<div class="form-group">
+					
+							<input name="gender" value="male" type="radio"> Male <input name="gender" value="female" type="radio"> Female 
+						</div>
+			
+                        <div class="form-group">
+					   @Html.PasswordFor(model => model.password, new { @placeholder = "password",@class = "form-control",@style="width :100% "   })
+                    	  @Html.ValidationMessageFor(m => m.password)
+                                </div>
+			            <div class="form-group">
+					   @Html.PasswordFor(model => model.repassword, new { @placeholder = "re type password",@class = "form-control",@style="width :100%" })
+                    	  @Html.ValidationMessageFor(m => m.repassword)
+                                </div>
+			        
+    			<button type="submit" class="btn btn-1">Create</button>
+}
+				</div>
+			</div>
+		</div>
+	</div>
+	@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

@@ -1,0 +1,87 @@
+﻿@model IEnumerable<shopping.Models.order>
+
+<!DOCTYPE html>
+
+<html lang="en">
+ <head>
+    <title></title>
+
+	
+	
+</head>
+    <body>
+           <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                
+                  <div class="jumbotron">
+                    <h1>ORDERS ARE !</h1>
+                </div>	
+                <div class="row">
+                    <div class="col-lg-6">
+                         <div class="table-responsive">
+                            <table class="table table-bordered table-hover table-striped">
+                                <thead class="thead-inverse">
+                                    <tr>
+                                        <th>
+            @Html.DisplayName("Mobile name")
+        </th>
+        <th>
+            @Html.DisplayName("Price")
+        </th>
+       
+        <th>
+            @Html.DisplayName("PERSON NAME")
+        </th>
+        <th>
+            @Html.DisplayName("Address")
+        </th>
+        <th>
+            @Html.DisplayName("Quantity")
+        </th>
+<th>
+            @Html.DisplayName("phone")
+        </th>
+        
+        <th>
+
+        </th>
+    </tr>
+       </thead>
+                         <tbody>
+                                 
+@foreach (var item in Model) {
+    <tr>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.price)
+        </td>
+      
+        <td>
+            @Html.DisplayFor(modelItem => item.pname)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.quantity)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.phone)
+        </td>
+        
+        <td>
+            @Html.ActionLink("Delete", "Deleteord", new { id=item.Id })
+        </td>
+    </tr>
+    
+}
+                                                             </tbody>
+                            </table>
+                        </div>
+ </div></div></div>                   </div>
+</body></html>

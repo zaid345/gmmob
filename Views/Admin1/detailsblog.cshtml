@@ -1,0 +1,59 @@
+﻿@model shopping.Models.blog
+
+<link href="~/css/style4.css" rel="stylesheet" type="text/css"  media="all" />
+      
+	
+           <div class="container-fluid">
+                                <div class="row">
+             <div class="jumbotron">
+                    <h1>details of this blog is</h1>
+                              <!-- Page Heading --></div>
+                                          <!-- Page Heading -->
+  <div class="container">
+
+	<div class="row">
+<br />
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.name)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.name,new { @style="font-size: 400%z" })
+    </div>
+        <br />
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.date)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.date,new { @style="font-size: 400%z" })
+    </div>
+        
+        <br />
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.category)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.category,new { @style="font-size: 400%z" })
+    </div>
+        <br />
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.image)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.image)
+    </div>
+        <br />
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.subject)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.subject,new { @style="font-size: 400%z" })
+    </div>
+
+     <br />
+      <img src="@Model.image" height="300" width="275" alt="" />
+   
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

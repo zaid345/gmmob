@@ -1,0 +1,19 @@
+﻿
+    <link rel="stylesheet" href="~/css/bootstrap.min.css"  type="text/css">
+	
+	<link rel="stylesheet" href="~/css/style4.css">
+<div class="container">
+			<div class="row">
+@using (Html.BeginForm("reset", "Home", FormMethod.Post,
+                               new { enctype = "multipart/form-data" }))
+ 
+{
+     <br />
+     <div class="form-group">
+    <label for="text">Enter your UserName:</label>
+    <input type="text"  class="form-control" id="uname" name="uname">
+  </div>
+    				<button type="submit" class="btn btn-1"value="submit" >reset</button> 
+   
+}</div></div>
+<br /><br /><br /><br /><br /><br />

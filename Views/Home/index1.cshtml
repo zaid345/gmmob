@@ -1,0 +1,10 @@
+﻿        <script src="http://tristanedwards.me/u/SweetAlert//lib/sweet-alert.js"></script>
+<link rel="stylesheet" type="text/css" href="http://tristanedwards.me/u/SweetAlert//lib/sweet-alert.css">
+<link href="~/Content/Bootstrap.min.css" rel="stylesheet" />
+
+ @if(@ViewBag.a != null)
+{
+<script >
+    swal("@ViewData["Message"]", "@ViewData["Message"]", "success")
+</script>
+}

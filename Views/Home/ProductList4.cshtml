@@ -1,0 +1,50 @@
+﻿
+@using PagedList.Mvc
+@model PagedList.IPagedList<shopping.Models.prouduct>
+
+    <link rel="stylesheet" href="~/css/bootstrap.min.css"  type="text/css">
+	
+	<link rel="stylesheet" href="~/css/style4.css">
+			<link href='http://fonts.googleapis.com/css?family=Londrina+Solid|Coda+Caption:800|Open+Sans' rel='stylesheet' type='text/css'>
+
+<script src="~/Scripts/jquery-1.7.1.min.js" type="text/javascript"></script>
+<script src="~/Scripts/jquery.validate.min.js" type="text/javascript"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js" type="text/javascript"></script>
+    
+	  <script src="http://tristanedwards.me/u/SweetAlert//lib/sweet-alert.js"></script>
+<link rel="stylesheet" type="text/css" href="http://tristanedwards.me/u/SweetAlert//lib/sweet-alert.css">
+<link href="~/Content/Bootstrap.min.css" rel="stylesheet" />
+<body>
+            	<div class="section group">
+				<div class="row">
+		
+               @foreach (var item in Model)
+               {  
+		
+		    	<div class="grid_1_of_4 images_1_of_4 products-info">
+					 <img  src="@item.image"  />
+                   <a href="/Home/sing">  @Html.ActionLink(@item.name, "sing", new { id = item.Id }) </a>
+					 <h3>$@item.price</h3>
+					 <ul>
+					 	<li>@Html.ActionLink("ORDER NOW", "sing", new { id = item.Id }, new { id =item.category })</li>
+    @{
+    string cat = item.category;
+    }
+					 </ul>
+				</div>
+                   
+               }
+                    </div>
+		    </div>	
+    <form>       <input type="hidden" name="g" value="@TempData["cat"]" />
+ </form>
+  
+        <div id='Paging' style="text-align:center">
+
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("show", new { page,cat=ViewBag.cat}))
+</div>    
+
+      @Styles.Render("~/Content/PagedList.css")
+    </body>

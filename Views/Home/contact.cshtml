@@ -1,0 +1,225 @@
+﻿@model shopping.Models.contact
+	
+@if (TempData["con"] != null)
+{
+<script >
+    swal("@TempData["con"] ", " @TempData["con"]", "success")
+</script>
+}
+
+             
+          
+<script src="~/Scripts/jquery-1.7.1.min.js" type="text/javascript"></script>
+<script src="~/Scripts/jquery.validate.min.js" type="text/javascript"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js" type="text/javascript"></script>
+    
+	  <script src="http://tristanedwards.me/u/SweetAlert//lib/sweet-alert.js"></script>
+
+    <link rel="stylesheet" href="~/css/bootstrap.min.css"  type="text/css">
+	
+	<link rel="stylesheet" href="~/css/style4.css">
+			<link href='http://fonts.googleapis.com/css?family=Londrina+Solid|Coda+Caption:800|Open+Sans' rel='stylesheet' type='text/css'>
+
+<script src="~/Scripts/jquery-1.7.1.min.js" type="text/javascript"></script>
+<script src="~/Scripts/jquery.validate.min.js" type="text/javascript"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js" type="text/javascript"></script>
+    
+	  <script src="http://tristanedwards.me/u/SweetAlert//lib/sweet-alert.js"></script>
+<link rel="stylesheet" type="text/css" href="http://tristanedwards.me/u/SweetAlert//lib/sweet-alert.css">
+<link href="~/Content/Bootstrap.min.css" rel="stylesheet" />
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+ <!DOCTYPE html>
+<html>
+<head>
+<title>Resale a Business Category Flat Bootstrap Responsive Website Template | Contact :: w3layouts</title>
+    
+	<link rel="stylesheet" href="~/css/style4.css">
+			<link href='http://fonts.googleapis.com/css?family=Londrina+Solid|Coda+Caption:800|Open+Sans' rel='stylesheet' type='text/css'>
+
+<script src="~/Scripts/jquery-1.7.1.min.js" type="text/javascript"></script>
+<script src="~/Scripts/jquery.validate.min.js" type="text/javascript"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js" type="text/javascript"></script>
+    
+	  <script src="http://tristanedwards.me/u/SweetAlert//lib/sweet-alert.js"></script>
+<link rel="stylesheet" type="text/css" href="http://tristanedwards.me/u/SweetAlert//lib/sweet-alert.css">
+<link href="~/Content/Bootstrap.min.css" rel="stylesheet" />
+ 
+<link rel="stylesheet" href="~/css3/bootstrap.min.css">
+<link rel="stylesheet" href="~/css3/bootstrap-select.css">
+<link href="~/css3/style.css" rel="stylesheet" type="text/css" media="all" />
+<!-- for-mobile-apps -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="keywords" content="Resale Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+<!-- //for-mobile-apps -->
+<!--fonts-->
+<link href='//fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
+<link href='//fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700,700italic,800,800italic' rel='stylesheet' type='text/css'>
+<!--//fonts-->	
+<!-- js -->
+<script type="text/javascript" src="~/js3/jquery.min.js"></script>
+<!-- js -->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="~/js3/bootstrap.min.js"></script>
+<script src="~/js3/bootstrap-select.js"></script>
+<script type="text/javascript" src="~/js3/jquery.leanModal.min.js"></script>
+<link href="~/css3/jquery.uls.css" rel="stylesheet"/>
+<link href="~/css3/jquery.uls.grid.css" rel="stylesheet"/>
+<link href="~/css3/jquery.uls.lcd.css" rel="stylesheet"/>
+<!-- Source -->
+<script src="~/js3/jquery.uls.data.js"></script>
+<script src="~/js3/jquery.uls.data.utils.js"></script>
+<script src="~/js3/jquery.uls.lcd.js"></script>
+<script src="~/js3/jquery.uls.languagefilter.js"></script>
+<script src="~/js3/jquery.uls.regionfilter.js"></script>
+<script src="~/js3/jquery.uls.core.js"></script>
+
+	  <script src="http://tristanedwards.me/u/SweetAlert//lib/sweet-alert.js"></script>
+<link rel="stylesheet" type="text/css" href="http://tristanedwards.me/u/SweetAlert//lib/sweet-alert.css">
+<link href="~/Content/Bootstrap.min.css" rel="stylesheet" />
+  <script>
+   $(document).ready(function () {
+        $('.uls-trigger').uls({
+            onSelect: function (language) {
+                var languageName = $.uls.data.getAutonym(language);
+                $('.uls-trigger').text(languageName);
+            },
+            quickList: ['en', 'hi', 'he', 'ml', 'ta', 'fr'] //FIXME
+        });
+    });
+		</script>
+		<link rel="stylesheet" type="text/~/css3" href="~/css3/easy-responsive-tabs.~/css3 " />
+    <script src="~/js3/easyResponsiveTabs.js"></script>
+</head>
+<body>
+                        
+                                    
+        
+		<div class="container">
+			<h2 class="head text-center">Contact Us</h2>
+			
+				<form id="filldetails" action="/Home/contact" method="post">
+					  <div class="field name-box">
+							<input type="text" id="email" name="name" placeholder="Who Are You?"/>
+							<label for="name">Name</label>
+							<span class="ss-icon">check</span>
+					  </div>
+					  
+					  <div class="field email-box">
+							<input type="text" id="email" name= "email" placeholder="example@email.com"/>
+							<label for="email">Email</label>
+							<span class="ss-icon">check</span>
+					  </div>
+					  <br />
+					  
+					  <div class="field phonenum-box">
+							<input type="text" id="email" name="phone" placeholder="Phone Number"/>
+							<label for="email">Phone</label>
+							<span class="ss-icon">check</span>
+					  </div>
+
+					  <div class="field msg-box">
+							<textarea id="msg" name="msg" rows="4" placeholder="Your message goes here..."/></textarea>
+							<label for="msg">Your Msg</label>
+							<span class="ss-icon">check</span>
+					  </div>
+
+					 
+		
+		<div class="clear"></div>
+		<input class="button" type="submit" value="Send" />
+		</form>
+		
+    <!-- JavaScript Includes -->
+		<script src="~/js3/jquery.knob.~/js3"></script>
+
+		<!-- jQuery File Upload Dependencies -->
+		<script src="~/js3/jquery.ui.widget.~/js3"></script>
+		<script src="~/js3/jquery.fileupload.~/js3"></script>
+		
+		<!-- Our main ~/js3 file -->
+		<script src="~/js3/script.~/js3"></script>
+						</div>
+			<script>
+			    $('textarea').blur(function () {
+			        $('#hire textarea').each(function () {
+			            $this = $(this);
+			            if (this.value != '') {
+			                $this.addClass('focused');
+			                $('textarea + label + span').css({ 'opacity': 1 });
+			            } else {
+			                $this.removeClass('focused');
+			                $('textarea + label + span').css({ 'opacity': 0 });
+			            }
+			        });
+			    });
+			    $('#hire .field:first-child input').blur(function () {
+			        $('#hire .field:first-child input').each(function () {
+			            $this = $(this);
+			            if (this.value != '') {
+			                $this.addClass('focused');
+			                $('.field:first-child input + label + span').css3({ 'opacity': 1 });
+			            } else {
+			                $this.removeClass('focused');
+			                $('.field:first-child input + label + span').css3({ 'opacity': 0 });
+			            }
+			        });
+			    });
+			    $('#hire .field:nth-child(2) input').blur(function () {
+			        $('#hire .field:nth-child(2) input').each(function () {
+			            $this = $(this);
+			            if (this.value != '') {
+			                $this.addClass('focused');
+			                $('.field:nth-child(2) input + label + span').css({ 'opacity': 1 });
+			            } else {
+			                $this.removeClass('focused');
+			                $('.field:nth-child(2) input + label + span').css({ 'opacity': 0 });
+			            }
+			        });
+			    });
+			    $('#hire .field:nth-child(3) input').blur(function () {
+			        $('#hire .field:nth-child(3) input').each(function () {
+			            $this = $(this);
+			            if (this.value != '') {
+			                $this.addClass('focused');
+			                $('.field:nth-child(3) input + label + span').css({ 'opacity': 1 });
+			            } else {
+			                $this.removeClass('focused');
+			                $('.field:nth-child(3) input + label + span').css({ 'opacity': 0 });
+			            }
+			        });
+			    });
+			    $('#hire .field:nth-child(4) input').blur(function () {
+			        $('#hire .field:nth-child(4) input').each(function () {
+			            $this = $(this);
+			            if (this.value != '') {
+			                $this.addClass('focused');
+			                $('.field:nth-child(4) input + label + span').css({ 'opacity': 1 });
+			            } else {
+			                $this.removeClass('focused');
+			                $('.field:nth-child(4) input + label + span').css({ 'opacity': 0 });
+			            }
+			        });
+			    });
+		</script>    
+		<script>
+		    if (document.location.search.match(/type=embed/gi)) {
+		        window.parent.postMessage("resize", "*");
+		    }
+	</script>
+		</div>	
+
+	<!-- // Terms of use -->
+	<!--footer section start-->	
+    	
+	    <!--footer section <!--footer section start-->		
+
+</body>
+</html>

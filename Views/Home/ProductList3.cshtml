@@ -1,0 +1,122 @@
+﻿
+@using PagedList.Mvc
+@model PagedList.IPagedList<shopping.Models.deal>
+
+    <link rel="stylesheet" href="~/css/bootstrap.min.css"  type="text/css">
+	
+	<link rel="stylesheet" href="~/css/style4.css">
+			<link href='http://fonts.googleapis.com/css?family=Londrina+Solid|Coda+Caption:800|Open+Sans' rel='stylesheet' type='text/css'>
+
+<script src="~/Scripts/jquery-1.7.1.min.js" type="text/javascript"></script>
+<script src="~/Scripts/jquery.validate.min.js" type="text/javascript"></script>
+<script src="~/Scripts/jquery.validate.unobtrusive.min.js" type="text/javascript"></script>
+    
+	  <script src="http://tristanedwards.me/u/SweetAlert//lib/sweet-alert.js"></script>
+<link rel="stylesheet" type="text/css" href="http://tristanedwards.me/u/SweetAlert//lib/sweet-alert.css">
+<link href="~/Content/Bootstrap.min.css" rel="stylesheet" />
+ 
+             <script>
+	     "$(window).load(function() {"
+	     $(function () {
+
+	         // Slideshow 1
+	         $("#slider1").responsiveSlides({
+	             maxwidth: 2000,
+	             speed: 600
+	         });
+	     });
+		  </script>
+ 
+		 
+		<div class="wrap">
+		<!----start-Header---->
+
+
+		</div>
+    
+@if (TempData["Success"] != null)
+{
+<script >
+    swal("@TempData["Success"]", "@TempData["Success1"]", "success")
+</script>
+}
+
+             
+
+		<div class="clear"> </div>
+	    
+		<!----End-top-nav---->
+		<!----End-Header---->
+	<!--start-image-slider---->
+           @{
+               IEnumerable<SelectListItem> teachers = ViewData["Teachers"] as IEnumerable<SelectListItem>;
+  
+           } 
+            <div id="page-content" class="single-page">
+	
+		<div class="container">
+			<div class="row">
+				
+    <div class="col-sm-10">
+	<div class="wrap">
+					<div class="image-slider">
+						 <ul class="rslides" id="slider1">
+					      <li><img src="~/images/1.png" alt=""></li>
+					      <li><img src="~/images/2.png" alt=""></li>
+					      <li><img src="~/images/012.png" alt=""></li>
+					    </ul>
+						 <!-- Slideshow 2 -->
+					</div>	
+					</div>
+					</div>
+					<br>
+<br>
+
+    <div class="col-sm-2">
+	<div class="heading"><h2>ONLINE MOBILE SHOPING.</h2>
+	</div>
+				</div>
+			</div>
+		</div>
+	</div><HR>
+	   <div class="content-grids">
+		    	<h4>Deals of the day</h4>
+		
+               @foreach (var item in Model)
+               {  
+		
+		    	<div class="grid_1_of_4 images_1_of_4 products-info">
+					 <img  src="@item.image"  />
+                   <a href="/Home/single">  @Html.ActionLink(@item.name, "sin", new { id = item.Id }) </a>
+					 <h3>$@item.price</h3>
+					 <ul>
+					 	<li>@Html.ActionLink("ORDER NOW", "sin", new { id = item.Id })</li>
+					 </ul>
+				</div>
+                   
+               }
+                    </div>
+		    </div>	
+
+<div id='Paging' style="text-align:center">
+
+Page @(Model.PageCount < Model.PageNumber ? 0 : Model.PageNumber) of @Model.PageCount
+
+@Html.PagedListPager(Model, page => Url.Action("index", new { page }))
+</div>    
+   </div>    
+            <div class="content-sidebar">
+		    		<h4>Categories</h4>
+						<ul>
+						@foreach (var std in teachers)
+      {
+
+          	<li>@Html.ActionLink(@std.Text, "show", new { cat = @std.Text })</li>
+      }
+						</ul>
+		    	</div>
+		    </div>
+            
+            
+
+      @Styles.Render("~/Content/PagedList.css")

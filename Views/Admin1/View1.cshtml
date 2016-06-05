@@ -1,0 +1,77 @@
+﻿@model shopping.Models.prouduct
+
+<!DOCTYPE html>
+
+<html lang="en">
+ <head>
+    <title>Mobile Shop | Free Bootstrap Themes by 365bootstrap.com</title>
+
+	
+	
+</head>
+    <body>
+          
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+                                <div class="row">
+                    <div class="col-lg-12">
+                     
+                  
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>prouduct</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.name)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.name)
+            @Html.ValidationMessageFor(model => model.name)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.price)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.price)
+            @Html.ValidationMessageFor(model => model.price)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.description)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.description)
+            @Html.ValidationMessageFor(model => model.description)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.category)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.category)
+            @Html.ValidationMessageFor(model => model.category)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.image)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.image)
+            @Html.ValidationMessageFor(model => model.image)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+                                 </div></div></div></div>
+
+            </body>
+</html>

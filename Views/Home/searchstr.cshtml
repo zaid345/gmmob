@@ -1,0 +1,71 @@
+﻿@model IEnumerable<shopping.Models.prouduct>
+	@{
+ Layout = "~/Views/Shared/_partial.cshtml";
+}
+	
+    <link rel="stylesheet" href="~/css/bootstrap.min.css"  type="text/css">
+	
+	<link rel="stylesheet" href="~/css/style5.css">
+
+		<link href="~/css/style.css" rel="stylesheet" type="text/css"  media="all" />
+		<meta name="keywords" content="Mobilestore iphone web template, Andriod web template, Smartphone web template, free webdesigns for Nokia, Samsung, LG, SonyErricsson, Motorola web design" />
+		<link rel="stylesheet" href="~/css/responsiveslides.css">
+		<script src="/js/responsiveslides.min.js"></script>
+	 
+	   <div class="content-grids">
+		   
+<div id="ProductList">
+    @Html.Partial("ProductList12", Model)
+
+</div>
+       </div>    
+            
+
+
+@section scripts
+{
+
+    <script type="text/javascript">
+        // Adding popstate event listener to handle browser back button  
+        window.addEventListener("popstate", function (e) {
+            $.ajax({
+                url: location.href,
+                success: function (result) {
+                    $('#ProductList12').html(result);
+                }
+            });
+        });
+
+        function ChangeUrl(page, url) {
+            if (typeof (history.pushState) != "undefined") {
+                var obj = { Page: page, Url: url };
+                history.pushState(null, obj.Page, obj.Url);
+            } else {
+                alert("Browser does not support HTML5.");
+            }
+        }
+
+        function getUrlVars() {
+            var vars = [], hash;
+            var hashes = window.location.href.slice(window.location.href.indexOf('?') + 1).split('&');
+            for (var i = 0; i < hashes.length; i++) {
+                hash = hashes[i].split('=');
+                vars.push(hash[0]);
+                vars[hash[0]] = hash[1];
+            }
+            return vars;
+        }
+
+
+    </script>
+
+
+}
+<br />
+
+@Styles.Render("~/Content/PagedList.css")
+
+
+
+
+

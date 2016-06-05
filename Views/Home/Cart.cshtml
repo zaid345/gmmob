@@ -1,0 +1,193 @@
+﻿
+@using shopping.Controllers;
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   
+    <title>sca</title> 
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Free Bootstrap Themes by 365Bootstrap dot com - Free Responsive Html5 Templates">
+    <meta name="author" content="http://www.365bootstrap.com">
+ 
+    <link rel="stylesheet" href="~/css/bootstrap.min.css"  type="text/css">
+	
+	<link rel="stylesheet" href="~/css/style9.css">
+	
+	<!-- Core JavaScript Files -->  	 
+    <script src="~/js/bootstrap.min.js"></script>
+	</head>
+<body>
+   
+	<div id="page-content" class="single-page">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-12">
+					<ul class="breadcrumb">
+						<li><a href="index">Home</a></li>
+						<li><a href="Cart">Cart</a></li>
+					</ul>
+				</div>
+
+			</div>
+            @{
+                double proTotal = 0;
+                double dealTotal1 = 0;
+                
+            }  
+            @foreach(var item in (List<proo> )Session["cart"])
+            {
+                
+                if(item.N>0)
+                {
+                    double subTotal = Convert.ToDouble(item.Quant) * Convert.ToDouble(item.S.price);
+                    proTotal += subTotal;
+			<div class="row">
+				<div class="product well">
+					<div class="col-md-3">
+						<div class="image">
+                      
+							<img src=" @Html.DisplayFor(model => item.S.image) "/>
+						</div>
+					</div>
+					<div class="col-md-9">
+						<div class="caption">
+                            <h1>your order</h1>
+						
+                          <br/>
+                         NAME :   	<div class="name"><h3>@item.S.name</h3></div>
+                            <br />
+                           QUANTITY : 	<div class="name"><h3>@item.Quant</h3></div>
+
+							<div class="info">	
+								<ul>
+								category :
+                                    <br />	<li> @Html.DisplayFor(model => item.S.category)</li>
+									</ul>
+							</div>
+						price :
+                            <br />
+                            	<div class="price">@subTotal</div>
+						<hr>
+	                          
+  @using (Html.BeginForm("rem","Home"))
+{
+            
+  <input type="hidden" name="Id" value="@item.S.Id" /> 
+      
+      <input type="submit" value="REMOVE"  class="btn btn-default pull-right"/>
+        
+		 
+}        
+      					</div>
+					</div>
+					<div class="clear"></div>
+				</div>	
+			</div>
+					<div class="clear"></div>
+			}
+           else
+           {
+                    
+           <div class="row">
+				<div class="product well">
+					<div class="col-md-3">
+						<div class="image">
+   @{
+               double subTotal = Convert.ToDouble(item.Quant1) * Convert.ToDouble(item.S1.price);
+               dealTotal1 += subTotal;
+	
+   }                   
+							<img src=" @Html.DisplayFor(model => item.S1.image) "/>
+						</div>
+					</div>
+					<div class="col-md-9">
+						<div class="caption">
+                            <h1>your order</h1>
+						
+                          <br/>
+                         NAME :   	<div class="name"><h3>@item.S1.name</h3></div>
+                            <br />
+                           QUANTITY : 	<div class="name"><h3>@item.Quant1</h3></div>
+
+							<div class="info">	
+								<ul>
+								category :
+                                    <br />	<li> @Html.DisplayFor(model => item.S1.category)</li>
+									</ul>
+							</div>
+						price :
+                            <br />
+                            	<div class="price"> @subTotal</div>
+						<hr>
+                            
+  @using (Html.BeginForm("rem","Home"))
+{
+            
+  <input type="hidden" name="Id3" value="@item.S1.Id" /> 
+      
+      <input type="submit" value="REMOVE"  class="btn btn-default pull-right"/>
+        
+		 
+}        
+           
+						</div>
+					</div>
+					<div class="clear"></div>
+				</div>	
+			</div>
+					<div class="clear"></div>         
+            }
+		    }
+            @{
+                
+                double tot = dealTotal1 + proTotal;
+                double tot1 = tot+100;
+           
+                 }
+
+			<div class="row">
+				<div class="col-md-4 col-md-offset-8 ">
+					<center><a href="/Home/index" class="btn btn-1">Continue To Shopping</a></center>
+				</div>
+			</div>
+			<div class="row">
+				<div class="pricedetails">
+					<div class="col-md-4 col-md-offset-8">
+						<table>
+							<h6>Price Details</h6>
+							<tr>
+								<td>total</td>
+								<td>@tot</td>
+							</tr>
+						
+							<tr>
+								<td>Delivery Charges</td>
+								<td>100.00</td>
+							</tr>
+
+							<tr style="border-top: 1px solid #333">
+								<td><h5>Grand total</h5></td>
+								<td>@tot1</td>
+							</tr>
+						</table>
+                       						                    
+  @using (Html.BeginForm("checkout","Home",FormMethod.Post,   new { enctype = "multipart/form-data" }))
+{
+            
+            
+            			<div class="form-group">
+                             <textarea class="form-control" placeholder="address :" rows="5" id="comment" name="address" required></textarea>
+						</div>
+						
+					
+    						<button type="submit" class="btn btn-1"    >checkout</button>
+	   
+}    
+					</div>
+				</div>
+			</div>
+	
+</body>
+</html>

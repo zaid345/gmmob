@@ -1,0 +1,69 @@
+﻿@model IEnumerable<shopping.Models.login>
+
+<!DOCTYPE html>
+
+<html lang="en">
+ <head>
+    <title>delete user</title>
+
+	
+	
+</head>
+    <body>
+           <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+      <div class="jumbotron">
+                    <h1>users ARE !</h1>
+                </div>	
+                            <div class="row">
+                    <div class="col-lg-6">
+              <div class="table-responsive">
+                            <table class="table table-bordered table-hover table-striped">
+                                            <thead class="thead-inverse">
+                        <tr>
+                                        <th>
+          
+            @Html.DisplayNameFor(model => model.username)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.phone)
+        </th>
+        
+    </tr>
+                                    </thead>
+                                <tbody>
+                                    
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.username)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.phone)
+        </td>
+         <td>
+            @Html.ActionLink("Delete", "Deleteuser", new { id=item.Id })
+        </td>
+
+    </tr>
+}
+
+                                                             </tbody>
+                            </table>
+                        </div>
+ </div></div></div>                   </div>
+</body></html>
